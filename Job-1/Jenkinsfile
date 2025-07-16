@@ -1,0 +1,22 @@
+pipeline{
+    agent any
+    stages{
+        stage('build'){
+            steps{
+                sh '''
+                    hostname -I
+                    echo "server IP address: $(hostname -I)
+                '''
+            }
+        }
+        stage('uptme'){
+            steps{
+                sh '''
+                    uptime
+                    echo "server IP address: $(uptime)
+                '''
+            }
+        }
+        
+    }
+}
