@@ -5,7 +5,7 @@ pipeline{
             steps{
                 sh '''
                     hostname -I
-                    echo "server IP address: $(hostname -I)
+                    echo "server IP address: $(hostname -I)"
                 '''
             }
         }
@@ -13,7 +13,7 @@ pipeline{
             steps{
                 sh '''
                     uptime
-                    echo "server IP address: $(uptime)
+                    echo "server IP address: $(uptime)"
                 '''
             }
         }
