@@ -11,7 +11,7 @@ pipeline{
         }
         stage('build docker image'){
             steps{
-            sh 'docker build -f Dockerfile .'
+            sh 'docker build -f rohit-s3project .'
             }
         }
         // stage('docker image scan'){
@@ -21,7 +21,7 @@ pipeline{
         // }
         stage('containerisation'){
             steps{
-            sh 'docker run -it -d 9000:8080 --name RohitS3project Dockerfile .'
+            sh 'docker run -it -d -p 9000:8080 --name RohitS3project rohit-s3project .'
             }
         }
         stage('login to docker hub'){
