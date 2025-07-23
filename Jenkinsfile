@@ -11,12 +11,12 @@ pipeline{
         }
         stage('build docker image'){
             steps{
-            sh 'docker build -t rohitkube/project1 .'
+            sh 'docker build -t rohitkube/project:1 .'
             }
         }
         stage('docker image scan'){
             steps{
-            sh 'trivy image --scanners vuln,secret --severity HIGH,CRITICAL rohitkube/project1'
+            sh 'trivy image --format table -o trivy-image-report.html rohitkube/project:1'
             }
         }
         stage('containerisation'){
