@@ -11,7 +11,7 @@ pipeline{
         }
         stage('build docker image'){
             steps{
-            sh 'docker build -f rohitkube/project1 .'
+            sh 'docker build -t rohitkube/project1 .'
             }
         }
         stage('docker image scan'){
