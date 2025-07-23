@@ -2,16 +2,16 @@ pipeline{
     agent any
 
     stages {
-        stage ('git checkout'){
+        stage('git checkout'){
             git branch: 'main', url: 'https://github.com/Rohitdevops73/new_project.git'
             }
-        // stage ('compile'){
+        // stage('compile'){
         //     sh 'mvn compile'
         //     }
-        // stage ('build'){
+        // stage('build'){
         //     git branch: 'main', url: 'https://github.com/Rohitdevops73/new_project.git'
         //     }
-        stage ('build docker image'){
+        stage('build docker image'){
             sh 'docker build -t RohitS3project:V1'
             }
         stage('docker image scan'){
