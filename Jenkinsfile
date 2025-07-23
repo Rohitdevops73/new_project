@@ -1,6 +1,8 @@
 pipeline{
     agent any
-
+    tools{
+        jdk 'JDK11'
+    }
     stages {
         stage('git checkout'){
             git branch: 'main', url: 'https://github.com/Rohitdevops73/new_project.git'

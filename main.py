@@ -4,10 +4,10 @@ from botocore.exceptions import NoCredentialsError
 import os
 
 # S3 Config
-AWS_ACCESS_KEY = ''
-AWS_SECRET_KEY = ''
-BUCKET_NAME = ''
-REGION = ''
+AWS_ACCESS_KEY = 'AKIAUWH33Z56HO356GUW'
+AWS_SECRET_KEY = '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'
+BUCKET_NAME = 's3-upload-micordegree'
+REGION = 'ap-south-1'
 
 # Create S3 client
 s3 = boto3.client(
