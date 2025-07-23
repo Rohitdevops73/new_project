@@ -16,12 +16,12 @@ pipeline{
         }
         stage('docker image scan'){
             steps{
-            sh" trivy image --scanners vuln,secret --severity HIGH,CRITICAL RohitS3project:V1"
+            sh" trivy image --scanners vuln,secret --severity HIGH,CRITICAL RohitS3project ."
             }
         }
         stage('containerisation'){
             steps{
-            sh 'docker run -it -d 9000:8080 --name RohitS3project RohitS3project:V1'
+            sh 'docker run -it -d 9000:8080 --name RohitS3project RohitS3project .'
             }
         }
         stage('login to docker hub'){
