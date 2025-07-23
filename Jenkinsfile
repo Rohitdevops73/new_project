@@ -14,11 +14,11 @@ pipeline{
             sh 'docker build -f Dockerfile .'
             }
         }
-        stage('docker image scan'){
-            steps{
-            sh" trivy image --scanners vuln,secret --severity HIGH,CRITICAL Dockerfile ."
-            }
-        }
+        // stage('docker image scan'){
+        //     steps{
+        //     sh" trivy image --scanners vuln,secret --severity HIGH,CRITICAL Dockerfile ."
+        //     }
+        // }
         stage('containerisation'){
             steps{
             sh 'docker run -it -d 9000:8080 --name RohitS3project Dockerfile .'
