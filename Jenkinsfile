@@ -11,17 +11,17 @@ pipeline{
         }
         stage('build docker image'){
             steps{
-            sh 'docker build -f dockerfile .'
+            sh 'docker build -f rohitkube/project1 .'
             }
         }
-        // stage('docker image scan'){
-        //     steps{
-        //     sh" trivy image --scanners vuln,secret --severity HIGH,CRITICAL Dockerfile ."
-        //     }
-        // }
+        stage('docker image scan'){
+            steps{
+            sh 'trivy image --scanners vuln,secret --severity HIGH,CRITICAL rohitkube/project1'
+            }
+        }
         stage('containerisation'){
             steps{
-            sh 'docker run -it -d -p 9000:8080 --name rohits3project dockerfile .'
+            sh 'docker run -it -d -p 9000:8080 --name c1 rohitkube/project:1'
             }
         }
         stage('login to docker hub'){
@@ -33,8 +33,7 @@ pipeline{
         }
         stage('push docker image to docker hub'){
             steps{
-            
-            sh 'docker push rohits3project'
+            sh 'docker push rohitkube/project:1'
 
         }
         }
