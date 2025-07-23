@@ -7,12 +7,7 @@ pipeline{
         stage('git checkout'){
             git branch: 'main', url: 'https://github.com/Rohitdevops73/new_project.git'
             }
-        // stage('compile'){
-        //     sh 'mvn compile'
-        //     }
-        // stage('build'){
-        //     git branch: 'main', url: 'https://github.com/Rohitdevops73/new_project.git'
-        //     }
+        
         stage('build docker image'){
             sh 'docker build -t RohitS3project:V1'
             }
