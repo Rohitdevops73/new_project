@@ -11,7 +11,7 @@ pipeline{
         }
         stage('build docker image'){
             steps{
-            sh 'docker buildx build -f RohitS3project .'
+            sh 'docker build -f RohitS3project .'
             }
         }
         stage('docker image scan'){
