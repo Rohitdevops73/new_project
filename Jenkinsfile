@@ -21,7 +21,7 @@ pipeline{
         // }
         stage('containerisation'){
             steps{
-            sh 'docker run -it -d -p 9000:8080 --name rohitS3project Dockerfile .'
+            sh 'docker run -it -d -p 9000:8080 --name rohits3project Dockerfile .'
             }
         }
         stage('login to docker hub'){
