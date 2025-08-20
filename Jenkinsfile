@@ -21,7 +21,7 @@ pipeline{
         }
         stage('containerisation'){
             steps{
-            sh 'docker run -it -d -p 9000:8080 --name c1 rohitkube/project:1'
+            sh 'docker run -it -d -p 9000:8080 --name d1 rohitkube/project:1'
             }
         }
         stage('login to docker hub'){
@@ -39,3 +39,4 @@ pipeline{
         }
     }    
     }
+
